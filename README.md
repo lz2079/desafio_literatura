@@ -8,11 +8,10 @@ Este proyecto es una aplicación de consola desarrollada en Java como parte del 
 ## 📋 Tabla de Contenidos
 
 1.  [Descripción del Proyecto]
-2.  [Diagrama de Arquitectura]
-3.  [Funcionalidades]
-4.  [Cómo Usarlo]
-5.  [Obtención de Ayuda]
-6.  [Autor]
+2.  [Funcionalidades]
+3.  [Cómo Usarlo]
+4.  [Obtención de Ayuda]
+5.  [Autor]
 
 ## 📝 Descripción del Proyecto
 
@@ -24,66 +23,6 @@ La aplicación "Literatura" simula un catálogo de libros. Permite al usuario in
 *   Obtener estadísticas simples, como el conteo de libros por idioma.
 
 El objetivo es demostrar habilidades en Java, Spring Boot, consumo de APIs REST, mapeo objeto-relacional (JPA/Hibernate) y el uso de bases de datos relacionales.
-
-## 🏗️ Diagrama de Arquitectura
-
-La aplicación sigue una arquitectura basada en capas, común en aplicaciones Spring Boot:
-
-+--------------------+
-|  Usuario (Consola) |
-+--------------------+
-          |
-          | (Entrada/Salida)
-          v
-+-------------------------------+
-|  DesafioLiteraturaApplication |
-|  (CommandLineRunner)          |
-+-------------------------------+
-          |
-          | (Llama a métodos del servicio)
-          v
-+-------------------------+
-|     LibroService        |
-|  (Lógica de Negocio)    |
-+-------------------------+
-          |
-    +-----+-----+
-    |           |
-    v           v
-+------------+ +--------------+
-| ConsumoAPI | ConvierteDatos |
-| (HTTP)     | (JSON <-> Java)|
-+------------+ +--------------+
-    |           |
-    | (JSON)    | (Objetos Java)
-    v           v
-+--------------------------------------+
-| Gutendex API (https://gutendex.com ) |
-+--------------------------------------+ 
-
-+-------------------------+
-|     LibroService        |
-|  (Lógica de Negocio)    |
-+-------------------------+
-              |
-    	  +-----+----------------+
-        |                      |
-        v                      v
-+----------------+   +----------------------+
-| LibroRepository|   | AutorRepository      |
-| (JPA)          |   | (JPA)                |
-+----------------+   +----------------------+
-          |
-          | (Operaciones en BD)
-          v
-+---------------------------------+
-|    Base de Datos (PostgreSQL)   |
-|  Tablas: libros, autores,       |
-|  libro_autor, libro_idiomas,    |
-|  libro_temas                    |
-+---------------------------------+ 
-
-*(Nota: Las flechas representan la dirección principal del flujo de datos o dependencias)*
 
 ## ✨ Funcionalidades
 
